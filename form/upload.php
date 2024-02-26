@@ -20,6 +20,7 @@
     if (file_exists($target_file)) {
         echo "Sorry, file already exists.";
         $uploadOk = 0;
+        header("Location: file.php");
     }
 
     // Check file size
@@ -42,6 +43,7 @@
     } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+        header("Location: file.php");
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
