@@ -17,6 +17,7 @@
 
         echo $_SESSION['favcolor'] . "<br>";
         echo $_SESSION['favanimal'] . "<br>";
+        echo $_SESSION['favfood'] . "<br>";
     ?>
 </body>
 </html>
