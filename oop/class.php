@@ -30,6 +30,15 @@
     echo "Name: " . $apple->get_name();
     echo "<br>";
     echo "Color: " .  $apple->get_color();
+    echo "<br>";
+    echo "<br>";
+
+    // constant
+    class Goodbye {
+        const LEAVING_MESSAGE = "Thank you for visiting W3Schools.com!";
+      }
+      
+      echo Goodbye::LEAVING_MESSAGE;
 ?>
  
 </body>
