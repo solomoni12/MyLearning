@@ -9,17 +9,15 @@
         public $name;
         public $color;
 
-        // Methods
-        function set_name($name) {
+        // constructor
+        function __construct($name, $color){
             $this->name = $name;
+            $this->color = $color;
         }
-
+        
+        // Methods
         function get_name() {
             return $this->name;
-        }
-
-        function set_color($color) {
-            $this->color = $color;
         }
 
         function get_color() {
@@ -27,9 +25,7 @@
         }
     }
 
-    $apple = new Fruit();
-    $apple->set_name('Apple');
-    $apple->set_color('Red');
+    $apple = new Fruit('Apple', 'Red');
 
     echo "Name: " . $apple->get_name();
     echo "<br>";
