@@ -8,14 +8,14 @@
 <body>
     
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-        <input type="number" name="num01" placeholder="Number one" required>
+        <input type="text" name="num01" placeholder="Number one" required>
         <select name="operator" id="operator" required>
             <option value="add">+</option>
             <option value="sub">-</option>
             <option value="mult">*</option>
             <option value="divide">/</option>
         </select>
-        <input type="number" name="num02" placeholder="Number two" required>
+        <input type="text" name="num02" placeholder="Number two" required>
 
         <button>calculate</button>
     </form>
@@ -24,17 +24,18 @@
 
         if($_SERVER["REQUEST_METHOD"]=="POST"){
 
+
             $num01 = filter_input(INPUT_POST, "num01", FILTER_SANITIZE_NUMBER_FLOAT);
             $num02 = filter_input(INPUT_POST, "num02", FILTER_SANITIZE_NUMBER_FLOAT);
             $operator = htmlspecialchars($_POST["operator"]);
 
             $error = false;
 
-            if(empty($num01) || empty($num02) || empty($operator)){
-                echo "all data are required";
-
+            if (!($num01 == 0 || $num02 == 0) || empty($operator)) {
+                echo "num01 and num02 should not be 0, and operator is required";
                 $error = true;
             }
+            
 
             if(!is_numeric($num01) || !is_numeric($num02)){
 
@@ -44,9 +45,12 @@
             }
 
             if(!$error){
+
+                $value = '';
                 
                 switch($operator){
-                    
+    
+
                     case "add":
                         $value =  $num01 + $num02;
                         break;
@@ -57,7 +61,13 @@
                         $value =  $num01 * $num02; 
                         break;
                     case "divide":
-                        $value =  $num01 / $num02;
+                        if ($num02 != 0) {
+                            $value =  $num01 / $num02;
+                        } else {
+                            echo "Cannot divide by zero";
+                            $error = true;
+
+                        }
                         break;
 
                     default;
