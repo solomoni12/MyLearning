@@ -13,7 +13,7 @@
         echo("Integer is not valid". "<br>");
     }
 
-    $email = "john.doe@example.com";
+    $email = "john.doe@example.com/";
 
     // Remove all illegal characters from email
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
