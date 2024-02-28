@@ -12,9 +12,9 @@
 
 
     // display content
-    echo "post title: " .$post->getTitle() . "<br>";
-    echo "post content: " .$post->getContent() . "<br>";
-    echo "commented by: " .$comment->getUser()->getUsername() . "<br>";
-    echo "comment content: " .$comment->getContent() . "<br>";
+    echo "Post title: " .$post->getTitle() . "<br>";
+    echo "Post content: " .$post->getContent() . "<br>";
+    echo "Commented by: " .$comment->getUser()->getUsername() . "<br>";
+    echo "Comment content: " .$comment->getContent() . "<br>";
 
 ?>
