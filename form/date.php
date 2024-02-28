@@ -14,6 +14,7 @@
     date_default_timezone_set('Africa/Dar_es_Salaam'); 
 
 
+    
     echo "The time is " . date("h:i:sa") ."<br><br>";
 
 

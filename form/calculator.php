@@ -8,13 +8,16 @@
 <body>
     
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+
         <input type="text" name="num01" placeholder="Number one" required>
+        
         <select name="operator" id="operator" required>
             <option value="add">+</option>
             <option value="sub">-</option>
             <option value="mult">*</option>
             <option value="divide">/</option>
         </select>
+
         <input type="text" name="num02" placeholder="Number two" required>
 
         <button>calculate</button>
@@ -75,6 +78,7 @@
                 }
 
                 echo $value;
+                // var_dump($value);
             }
 
         }
