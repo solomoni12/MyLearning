@@ -26,7 +26,13 @@
         $name = "solomon mwalupani";
 
         echo "hello, $name!";
+        echo "<br>";
         echo 'hello, $name!';
+        echo "<br>";
+
+        // strlen return length of the string
+        echo strlen("hello Solomon Mwalupani!");
+        echo "<br>";
     ?>
 </body>
 </html>
