@@ -19,6 +19,14 @@
 
         echo $favcolor . "<br>";
         echo $favanimal . "<br>";
+
+        // There is a big difference between double quotes and single quotes in PHP.
+        // Double quotes process special characters, single quotes does not.
+
+        $name = "solomon mwalupani";
+
+        echo "hello, $name!";
+        echo 'hello, $name!';
     ?>
 </body>
 </html>
