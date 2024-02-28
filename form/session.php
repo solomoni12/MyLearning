@@ -33,6 +33,10 @@
         // strlen return length of the string
         echo strlen("hello Solomon Mwalupani!");
         echo "<br>";
+
+        // change word either to upper or lower case
+        echo strtolower("hello Solomon Mwalupani!");
+        echo "<br>";
     ?>
 </body>
 </html>
