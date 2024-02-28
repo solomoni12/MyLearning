@@ -14,3 +14,5 @@ echo "post title: " .$post->getTitle() . "<br>";
 echo "post content: " .$post->getContent() . "<br>";
 echo "commented by: " .$comment->getUser()->getUsername() . "<br>";
 echo "comment content: " .$comment->getContent() . "<br>";
+
+?>
