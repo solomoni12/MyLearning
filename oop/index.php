@@ -17,4 +17,6 @@
     echo "Commented by: " .$comment->getUser()->getUsername() . "<br>";
     echo "Comment content: " .$comment->getContent() . "<br>";
 
+
+
 ?>
