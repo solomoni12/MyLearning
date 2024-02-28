@@ -6,7 +6,7 @@ include 'Comment.php';
 
 
 $user = new User("solomon mwalupani");
-$pot = new Post('sample post','This sample for post content');
+$post = new Post('sample post','This sample for post content');
 $comment = new Comment($user, 'Great post');
 
 
