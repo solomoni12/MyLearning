@@ -76,10 +76,7 @@
                 echo "Valid integer: $filteredNumber";
             } else {
                 echo "Invalid integer";
-            }
-            
-
-
+            } 
             
     ?>
 
