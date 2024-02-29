@@ -10,8 +10,6 @@ require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/SMTP.php';
 // Create a new PHPMailer instance
 $mail = new PHPMailer(true);
 
-// var_dump($mail);
-
 try {
     // Server settings
     $mail->isSMTP();
