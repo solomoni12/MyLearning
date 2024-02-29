@@ -73,11 +73,25 @@
             $filteredNumber = filter_var($numberString, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_ALLOW_THOUSAND);
             
             if ($filteredNumber !== false) {
-                echo "Valid integer: $filteredNumber";
+                echo "Valid integer: $filteredNumber". "<br>";
             } else {
-                echo "Invalid integer";
+                echo "Invalid integer" . "<br>";
             } 
-            
+
+
+            // myclass test
+            class MyClass {
+                protected $foo = 'Hello, world!';
+             }
+             
+             class MyChildClass extends MyClass {
+                public function printFoo() {
+                   echo $this->foo;
+                }
+             }
+             
+             $obj = new MyChildClass();
+             $obj->printFoo();
     ?>
 
 </body>
