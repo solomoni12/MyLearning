@@ -50,8 +50,6 @@ try {
         </html>
     ';
 
-    
-
     // Send the email
     $mail->send();
     echo 'Email sent successfully';
