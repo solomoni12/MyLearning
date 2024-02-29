@@ -50,9 +50,8 @@ try {
         </html>
     ';
 
-    echo "<pre>";
-    print_r($mail);
-    exit();
+    
+
     // Send the email
     $mail->send();
     echo 'Email sent successfully';
