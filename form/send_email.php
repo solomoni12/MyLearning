@@ -17,12 +17,12 @@ try {
     $mail->Port = 587;
     $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true;
-    $mail->Username = 'your@gmail.com'; // Replace with your Gmail address
-    $mail->Password = 'your-password'; // Replace with your Gmail password
+    $mail->Username = 'mwalupani1234@gmail.com'; 
+    $mail->Password = 'your-password'; 
 
     // Recipients
-    $mail->setFrom('your@gmail.com', 'Your Name'); // Replace with your Gmail address and name
-    $mail->addAddress('mwalupani1234@gmail.com', 'Recipient Name'); // Replace with the recipient's email address and name
+    $mail->setFrom('your@gmail.com', 'Your Name'); 
+    $mail->addAddress('mwalupani1234@gmail.com', 'Recipient Name'); 
 
     // Content
     $mail->isHTML(true);
