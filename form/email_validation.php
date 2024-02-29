@@ -60,10 +60,25 @@
             $mail = filter_var($email, FILTER_SANITIZE_EMAIL);
 
             if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
-                echo $mail;
+                echo $mail . "<br>";
             }else{
-                echo "It is not valid email";
+                echo "It is not valid email" . "<br>";
             }
+
+
+            // Number with a comma as a thousands separator
+            $numberString = "1,000,000";
+
+            // Applying the FILTER_SANITIZE_NUMBER_INT filter with FLAG_ALLOW_THOUSAND
+            $filteredNumber = filter_var($numberString, FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_ALLOW_THOUSAND);
+            
+            if ($filteredNumber !== false) {
+                echo "Valid integer: $filteredNumber";
+            } else {
+                echo "Invalid integer";
+            }
+            
+
 
             
     ?>
