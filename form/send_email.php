@@ -1,14 +1,16 @@
 <?php
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 // Include the PHPMailer library
-require 'path/to/PHPMailer/src/Exception.php';
-require 'path/to/PHPMailer/src/PHPMailer.php';
-require 'path/to/PHPMailer/src/SMTP.php';
+require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/Exception.php';
+require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/PHPMailer.php';
+require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/SMTP.php';
 
 // Create a new PHPMailer instance
-// $mail = new PHPMailer(true);
+$mail = new PHPMailer(true);
+
+// var_dump($mail);
 
 try {
     // Server settings
@@ -18,11 +20,11 @@ try {
     $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true;
     $mail->Username = 'mwalupani1234@gmail.com'; 
-    $mail->Password = 'your-password'; 
+    $mail->Password = '2000$OLOMONi'; 
 
     // Recipients
-    $mail->setFrom('your@gmail.com', 'Your Name'); 
-    $mail->addAddress('mwalupani1234@gmail.com', 'Recipient Name'); 
+    $mail->setFrom('mwalupani1234@gmail.com', 'Solomon Mwalupani'); 
+    $mail->addAddress('mwalupani1234@gmail.com', 'Solomon Mwalupani'); 
 
     // Content
     $mail->isHTML(true);
