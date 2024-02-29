@@ -10,8 +10,6 @@ require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/SMTP.php';
 // Create a new PHPMailer instance
 $mail = new PHPMailer(true);
 
-
-
 try {
     // Server settings
     $mail->isSMTP();
@@ -49,6 +47,11 @@ try {
             </body>
         </html>
     ';
+
+    
+    echo "<pre>";
+    print_r($mail);
+    exit();
 
     // Send the email
     $mail->send();
