@@ -10,6 +10,8 @@ require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/SMTP.php';
 // Create a new PHPMailer instance
 $mail = new PHPMailer(true);
 
+
+
 try {
     // Server settings
     $mail->isSMTP();
@@ -18,7 +20,7 @@ try {
     $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true;
     $mail->Username = 'mwalupani1234@gmail.com'; 
-    $mail->Password = 'password'; 
+    $mail->Password = '2000$OLOMONi'; 
 
     // Recipients
     $mail->setFrom('mwalupani1234@gmail.com', 'Solomon Mwalupani'); 
@@ -48,6 +50,9 @@ try {
         </html>
     ';
 
+    echo "<pre>";
+    print_r($mail);
+    exit();
     // Send the email
     $mail->send();
     echo 'Email sent successfully';
