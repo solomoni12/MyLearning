@@ -13,6 +13,8 @@
 
     <?php
         if (isset($_GET["email"])) {
+
+
             if (!filter_input(INPUT_GET, "email", FILTER_VALIDATE_EMAIL) === false) {
                 echo("Email is valid");
                 echo "<br>";
@@ -49,6 +51,22 @@
             }
         ?>
     </table>
+
+    <?php 
+
+            $email = "//mwalupani1234@gmail.com///";
+
+            // remove alll illegal characters from email
+            $mail = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+            if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
+                echo $mail;
+            }else{
+                echo "It is not valid email";
+            }
+
+            
+    ?>
 
 </body>
 </html>
