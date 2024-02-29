@@ -18,7 +18,7 @@ try {
     $mail->SMTPSecure = 'tls';
     $mail->SMTPAuth = true;
     $mail->Username = 'mwalupani1234@gmail.com'; 
-    $mail->Password = '2000$OLOMONi'; 
+    $mail->Password = 'password'; 
 
     // Recipients
     $mail->setFrom('mwalupani1234@gmail.com', 'Solomon Mwalupani'); 
