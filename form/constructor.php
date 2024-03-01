@@ -2,6 +2,14 @@
 <html>
     <body>
 
+    <div className="fixed top-0 right-0 p-4 flex justify-end space-x-4">
+      <a href="#" className="text-gray-700 hover:text-black">About</a>
+      <a href="#" className="text-gray-700 hover:text-black">Home</a>
+      <a href="#" className="text-gray-700 hover:text-black">Contact</a>
+    </div>
+</div>
+</div>
+
         <?php
             class Fruit {
                 public $name;
