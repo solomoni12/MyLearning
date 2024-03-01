@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP Sorting</title>
 </head>
 <body>
             <!-- 
@@ -19,37 +19,37 @@
 </html>
 
 <?php 
-    // sort()
+    // sort() - Sort array in ascending alphabetic or numeric order
     $fruits = array("Banana", "Apple", "Orange", "Cherry");
     sort($fruits);
     echo "<pre>";
     print_r($fruits);
     
-    // rsort()
+    // rsort() - Sort array in decending alphabetic or numeric order
     $fruits = array("Banana", "Apple", "Orange", "Cherry");
     rsort($fruits);
     echo "<pre>";
     print_r($fruits);
 
-    // asort()
+    // asort() - Sort array in ascending in ascenfding order, accoding to value
     $age = array("Peter" => 32, "John" => 45, "Doe" => 23);
     asort($age);
     echo "<pre>";
     print_r($age);
 
-    // ksort()
+    // ksort() - Sort array in ascending order, accoding to key
     $age = array("Peter" => 32, "John" => 45, "Doe" => 23);
     ksort($age);
     echo "<pre>";
     print_r($age);
 
-    // arsort()
+    // arsort() - Sort array in decending in ascenfding order, accoding to value
     $age = array("Peter" => 32, "John" => 45, "Doe" => 23);
     arsort($age);
     echo "<pre>";
     print_r($age);
 
-    // krsort()
+    // krsort() - Sort array in decending order, accoding to key
     $age = array("Peter" => 32, "John" => 45, "Doe" => 23);
     krsort($age);
     echo "<pre>";
