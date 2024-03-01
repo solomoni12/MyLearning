@@ -15,11 +15,6 @@
         $a[] = $randomName;
     }
     
-    // Now $names contains more than 1000 names
-    // echo "<pre>";
-    // print_r($a);
-    // exit();
-
     // get the q parameter from URL
     $q = $_REQUEST["q"];
 
@@ -40,6 +35,5 @@
         }
     }
 
-    // Output "no suggestion" if no hint was found or output correct values
     echo $hint === "" ? "no suggestion" : $hint;
 ?>
