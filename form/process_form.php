@@ -56,6 +56,7 @@
         } else {
             // Proceed with further processing (e.g., storing data in a database)
             // You can access the validated data using $_POST['key']
+
             echo "Form submitted successfully!";
         }
     } else {
