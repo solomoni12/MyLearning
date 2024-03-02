@@ -61,8 +61,6 @@
                 echo htmlspecialchars($error) . "<br>";
             }
         } else {
-            echo "Form submitted successfully!<br>";
-
             // Echo submitted data
             echo "<strong>Submitted Data:</strong><br>";
             echo "First Name: " . htmlspecialchars($_POST['firstName']) . "<br>";
