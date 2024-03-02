@@ -1,66 +1,84 @@
 <?php
 
-    function validateForm($data) {
-        $errors = [];
+function validateForm($data) {
+    $errors = [];
 
-        // Validate First Name
-        if (empty($data['firstName'])) {
-            $errors[] = 'First Name is required.';
-        }
-
-        // Validate Last Name
-        if (empty($data['lastName'])) {
-            $errors[] = 'Last Name is required.';
-        }
-
-        // Validate Email
-        if (empty($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'Invalid Email address.';
-        }
-
-        // Validate Phone Number
-        if (empty($data['phone']) || !preg_match("/^\d{10}$/", $data['phone'])) {
-            $errors[] = 'Invalid Phone Number (10 digits without spaces or dashes).';
-        }
-
-        // Validate Sex
-        $validSexOptions = ['male', 'female', 'other'];
-        if (empty($data['sex']) || !in_array($data['sex'], $validSexOptions)) {
-            $errors[] = 'Invalid Sex selected.';
-        }
-
-        // Validate Age
-        if (empty($data['age']) || !is_numeric($data['age']) || $data['age'] < 1) {
-            $errors[] = 'Invalid Age.';
-        }
-
-        // Validate Address
-        if (empty($data['address'])) {
-            $errors[] = 'Address is required.';
-        }
-
-        return $errors;
+    // Validate First Name
+    $firstName = trim($data['firstName']);
+    if (empty($firstName)) {
+        $errors[] = 'First Name is required.';
     }
 
-    // Process form submission
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Validate form data
-        $validationErrors = validateForm($_POST);
+    // Validate Last Name
+    $lastName = trim($data['lastName']);
+    if (empty($lastName)) {
+        $errors[] = 'Last Name is required.';
+    }
 
-        // Display validation errors or proceed with further processing
-        if (!empty($validationErrors)) {
-            // Display errors
-            foreach ($validationErrors as $error) {
-                echo $error . "<br>";
-            }
-        } else {
-            // Proceed with further processing (e.g., storing data in a database)
-            // You can access the validated data using $_POST['key']
+    // Validate Email
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    if (empty($email)) {
+        $errors[] = 'Invalid Email address.';
+    }
 
-            echo "Form submitted successfully!";
+    // Validate Phone Number
+    $phone = trim($data['phone']);
+    if (empty($phone) || !preg_match("/^\d{10}$/", $phone)) {
+        $errors[] = 'Invalid Phone Number (10 digits without spaces or dashes).';
+    }
+
+    // Validate Sex
+    $validSexOptions = ['male', 'female', 'other'];
+    $sex = trim($data['sex']);
+    if (empty($sex) || !in_array($sex, $validSexOptions)) {
+        $errors[] = 'Invalid Sex selected.';
+    }
+
+    // Validate Age
+    $age = filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT);
+    if (empty($age) || $age < 1) {
+        $errors[] = 'Invalid Age.';
+    }
+
+    // Validate Address
+    $address = trim($data['address']);
+    if (empty($address)) {
+        $errors[] = 'Address is required.';
+    }
+
+    return $errors;
+}
+
+// Process form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Sanitize and validate form data
+    $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+    $validationErrors = validateForm($_POST);
+
+    // Display validation errors or proceed with further processing
+    if (!empty($validationErrors)) {
+        // Display errors
+        foreach ($validationErrors as $error) {
+            echo htmlspecialchars($error) . "<br>";
         }
     } else {
-        // Handle cases where the form is not submitted via POST method
-        echo "Form not submitted.";
+        // Proceed with further processing (e.g., storing data in a database)
+        // You can access the sanitized and validated data using $_POST['key']
+
+        echo "Form submitted successfully!<br>";
+
+        // Echo submitted data
+        echo "<strong>Submitted Data:</strong><br>";
+        echo "First Name: " . htmlspecialchars($_POST['firstName']) . "<br>";
+        echo "Last Name: " . htmlspecialchars($_POST['lastName']) . "<br>";
+        echo "Email: " . htmlspecialchars($_POST['email']) . "<br>";
+        echo "Phone: " . htmlspecialchars($_POST['phone']) . "<br>";
+        echo "Sex: " . htmlspecialchars($_POST['sex']) . "<br>";
+        echo "Age: " . htmlspecialchars($_POST['age']) . "<br>";
+        echo "Address: " . htmlspecialchars($_POST['address']) . "<br>";
     }
+} else {
+    // Handle cases where the form is not submitted via POST method
+    echo "Form not submitted.";
+}
 ?>
