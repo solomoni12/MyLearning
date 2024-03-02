@@ -11,22 +11,24 @@
     <div class="container mt-5">
         <form action="process_form.php" method="post">
 
-            <!-- First Name -->
-            <div class="mb-3">
-                <label for="firstName" class="form-label">First Name:</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" required>
-            </div>
+            <div class="row">
+                <!-- First Name -->
+                <div class="col-md-4 mb-3">
+                    <label for="firstName" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
 
-            <!-- Middle Name -->
-            <div class="mb-3">
-                <label for="middleName" class="form-label">Middle Name:</label>
-                <input type="text" class="form-control" id="middleName" name="middleName">
-            </div>
+                <!-- Middle Name -->
+                <div class="col-md-4 mb-3">
+                    <label for="middleName" class="form-label">Middle Name:</label>
+                    <input type="text" class="form-control" id="middleName" name="middleName">
+                </div>
 
-            <!-- Last Name -->
-            <div class="mb-3">
-                <label for="lastName" class="form-label">Last Name:</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                <!-- Last Name -->
+                <div class="col-md-4 mb-3">
+                    <label for="lastName" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
             </div>
 
             <!-- Email -->
