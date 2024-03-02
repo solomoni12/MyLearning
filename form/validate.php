@@ -31,26 +31,29 @@
                 </div>
             </div>
 
-            <!-- Email -->
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
+            <div class="row">
+                 <!-- Email -->
+                <div class="col-md-4 mb-3">
+            
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
 
-            <!-- Phone Number -->
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone Number:</label>
-                <input type="tel" class="form-control" id="phone" name="phone" max="10" min="10" required>
-            </div>
+                <!-- Phone Number -->
+                <div class="col-md-4 mb-3">
+                    <label for="phone" class="form-label">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" max="10" min="10" required>
+                </div>
 
-            <!-- Sex -->
-            <div class="mb-3">
-                <label for="sex" class="form-label">Sex:</label>
-                <select class="form-select" id="sex" name="sex" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
+                <!-- Sex -->
+                <div class="col-md-4 mb-3">
+                    <label for="sex" class="form-label">Sex:</label>
+                    <select class="form-select" id="sex" name="sex" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Age -->
