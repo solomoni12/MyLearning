@@ -11,5 +11,10 @@
             "email": "mwalupani1234@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4":{
+            "app\\": "./"
+        }
+    },
     "require": {}
 }
