@@ -9,18 +9,15 @@
     
     $a = $baseNames; 
     
-    // Generate additional random names until the array has more than 1000 names
     while (count($a) < 1000) {
         $randomName = $baseNames[array_rand($baseNames)];
         $a[] = $randomName;
     }
     
-    // get the q parameter from URL
     $q = $_REQUEST["q"];
 
     $hint = "";
 
-    // lookup all hints from array if $q is different from ""
     if ($q !== "") {
         $q = strtolower($q);
         $len=strlen($q);
