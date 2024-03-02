@@ -1,0 +1,15 @@
+{
+    "name": "dev/my-learning",
+    "autoload": {
+        "psr-4": {
+            "Dev\\MyLearning\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Solomon",
+            "email": "mwalupani1234@gmail.com"
+        }
+    ],
+    "require": {}
+}
