@@ -24,12 +24,11 @@
                     echo "<br>";
                 }
             }
+            
             $apple = new Fruit("Apple", "Red");
 
             echo $apple->getName() . "<br>";
             echo $apple->getColor() . "<br>";
-
-            
         ?>
     
     </body>
