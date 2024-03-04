@@ -22,6 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Initiate SetExpressCheckout
     $response = $caller->setExpressCheckout($amount, 'http://localhost/MyLearning/form/paypal/cancel.php', 'http://localhost/MyLearning/form/paypal/success.php');
 
+    echo "<pre>";
+    print_r($response);
+    exit();
+
     // Handle the response and redirect the user to PayPal for payment
     if ($response['ACK'] == 'Success') {
         $token = $response['TOKEN'];
@@ -43,5 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     // Handle cases where the form is not submitted via POST method
     echo "Form not submitted.";
+
+    header('Location: confirmation.php');
 }
 ?>
