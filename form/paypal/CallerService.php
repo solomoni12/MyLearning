@@ -6,15 +6,15 @@
 
         public function __construct()
         {
-            $this->apiEndpoint = 'https://api-3t.sandbox.paypal.com/nvp'; // Use sandbox endpoint for testing
+            $this->apiEndpoint = 'https://sandbox.paypal.com'; // Use sandbox endpoint for testing
         }
 
         public function call($params)
         {
             $params['VERSION'] = '53.0';
-            $params['USER'] = 'YOUR_SANDBOX_API_USERNAME';
-            $params['PWD'] = 'YOUR_SANDBOX_API_PASSWORD';
-            $params['SIGNATURE'] = 'YOUR_SANDBOX_API_SIGNATURE';
+            $params['USER'] = 'sb-k5h0e29306858_api1.business.example.com';
+            $params['PWD'] = 'UUCXUCTBJFP43DBJ';
+            $params['SIGNATURE'] = 'AZ-C-mHL0b0aK9g8-.AvDULDjdkZAhcA-R2w9wQ9mM6sYo-eb0NwUiRB';
 
             // Initialize cURL session
             $ch = curl_init();
