@@ -2,34 +2,40 @@
 require_once 'constants.php';
 require_once 'CallerService.php';
 
-// Create an instance of the CallerService class
-$caller = new CallerService();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $productName = $_POST['productName'];
+    $quantity = $_POST['quantity'];
+    $price = $_POST['price'];
 
-// Perform PayPal Express Checkout actions here using methods from CallerService
+    // Calculate total amount
+    $amount = $quantity * $price;
 
-// Example: SetExpressCheckout
-$params = array(
-    'METHOD' => 'SetExpressCheckout',
-    'VERSION' => VERSION,
-    'USER' => API_USERNAME,
-    'PWD' => API_PASSWORD,
-    'SIGNATURE' => API_SIGNATURE,
-    'PAYMENTREQUEST_0_PAYMENTACTION' => 'Sale',
-    'PAYMENTREQUEST_0_AMT' => '10.00', // Set your payment amount
-    'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD', // Set your currency code
-    'cancelUrl' => 'http://yourdomain.com/cancel.php', // Set your cancel URL
-    'returnUrl' => 'http://yourdomain.com/success.php', // Set your return URL
-);
+    // Create an instance of the CallerService class
+    $caller = new CallerService();
 
-$response = $caller->call($params);
+    // Initiate SetExpressCheckout
+    $response = $caller->setExpressCheckout($amount, 'http://yourdomain.com/cancel.php', 'http://yourdomain.com/success.php');
 
-// Handle the response and redirect the user to PayPal for payment
-if ($response['ACK'] == 'Success') {
-    $token = $response['TOKEN'];
-    header("Location: " . PAYPAL_URL . $token);
-    exit();
+    // Handle the response and redirect the user to PayPal for payment
+    if ($response['ACK'] == 'Success') {
+        $token = $response['TOKEN'];
+
+        // Store necessary data in session for use in DoExpressCheckoutPayment
+        $_SESSION['productName'] = $productName;
+        $_SESSION['quantity'] = $quantity;
+        $_SESSION['price'] = $price;
+        $_SESSION['amount'] = $amount;
+        $_SESSION['token'] = $token;
+
+        // Redirect to PayPal
+        header("Location: " . PAYPAL_URL . $token);
+        exit();
+    } else {
+        // Handle the error
+        echo "Error: " . $response['L_LONGMESSAGE0'];
+    }
 } else {
-    // Handle the error
-    echo "Error: " . $response['L_LONGMESSAGE0'];
+    // Handle cases where the form is not submitted via POST method
+    echo "Form not submitted.";
 }
 ?>
