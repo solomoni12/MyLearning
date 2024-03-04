@@ -21,7 +21,6 @@
         print_r($response);
         exit();
 
-        // Handle the response and redirect the user to PayPal for payment
         if ($response['ACK'] == 'Success') {
             $token = $response['TOKEN'];
 
@@ -38,14 +37,12 @@
         } else {
             // Handle the error
             echo "Error: " . $response['L_LONGMESSAGE0'];
-            exit(); // Make sure to exit after displaying the error
+            exit(); 
         }
     } else {
-        // Handle cases where the form is not submitted via POST method
         echo "Form not submitted.";
 
-        // Redirect to confirmation.php
         header('Location: confirmation.php');
-        exit(); // Make sure to exit after redirecting
+        exit(); 
     }
 ?>
