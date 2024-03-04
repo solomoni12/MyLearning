@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $caller = new CallerService();
 
     // Initiate SetExpressCheckout
-    $response = $caller->setExpressCheckout($amount, 'http://example.com/cancel.php', 'http://example.com/success.php');
+    $response = $caller->setExpressCheckout($amount, 'http://localhost/MyLearning/form/paypal/cancel.php', 'http://localhost/MyLearning/form/paypal/success.php');
 
     // Handle the response and redirect the user to PayPal for payment
     if ($response['ACK'] == 'Success') {
