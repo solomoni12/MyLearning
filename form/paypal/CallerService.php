@@ -6,7 +6,7 @@
 
         public function __construct()
         {
-            $this->apiEndpoint = 'https://sandbox.paypal.com'; // Use sandbox endpoint for testing
+            $this->apiEndpoint = 'https://api-3t.sandbox.paypal.com/nvp'; // Use sandbox endpoint for testing
         }
 
         public function call($params)
