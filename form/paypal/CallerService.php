@@ -45,19 +45,24 @@
             return $parsedResponse;
         }
 
-        public function setExpressCheckout($amount, $cancelUrl, $returnUrl)
+        public function setExpressCheckout($productName, $quantity, $price, $cancelUrl, $returnUrl)
         {
+            $amount = number_format($quantity * $price, 2, '.', '');
+        
             $params = array(
                 'METHOD' => 'SetExpressCheckout',
                 'PAYMENTREQUEST_0_PAYMENTACTION' => 'Sale',
                 'PAYMENTREQUEST_0_AMT' => $amount,
                 'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD',
-                'cancelUrl' => $cancelUrl,
-                'returnUrl' => $returnUrl,
+                'CANCELURL' => $cancelUrl,  // Update this line
+                'RETURNURL' => $returnUrl,  // Update this line
             );
-
+        
             return $this->call($params);
         }
+        
+        
+
 
         public function getExpressCheckoutDetails($token)
         {
