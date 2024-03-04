@@ -3,6 +3,8 @@ require_once 'constants.php';
 require_once 'CallerService.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
     $productName = $_POST['productName'];
     $quantity = $_POST['quantity'];
     $price = $_POST['price'];
@@ -12,6 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Create an instance of the CallerService class
     $caller = new CallerService();
+
+    // echo "<pre>";
+    // print_r($caller);
+    // exit();
 
     // Initiate SetExpressCheckout
     $response = $caller->setExpressCheckout($amount, 'http://localhost/MyLearning/form/paypal/cancel.php', 'http://localhost/MyLearning/form/paypal/success.php');
