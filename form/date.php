@@ -37,7 +37,7 @@
 
     echo "The last day of the year is " . date("Y-F-d", strtotime("last day of December")) . "<br>";
 
-    echo "The last month of the year is " . date("Y-F", strtotime("last month"));
+    echo "The last month of the year is " . date("Y-F", strtotime("last month")). "<br>";
 
 
 
