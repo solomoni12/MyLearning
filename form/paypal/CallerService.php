@@ -6,7 +6,7 @@
 
         public function __construct()
         {
-            $this->apiEndpoint = 'https://api-3t.sandbox.paypal.com/nvp'; // Use sandbox endpoint for testing
+            $this->apiEndpoint = 'https://api-3t.sandbox.paypal.com/nvp';
         }
 
         public function call($params)
@@ -52,18 +52,18 @@
             $params = array(
                 'METHOD' => 'SetExpressCheckout',
                 'PAYMENTREQUEST_0_PAYMENTACTION' => 'Sale',
-                'PAYMENTREQUEST_0_AMT' => $amount,
+                'PAYMENTREQUEST_0_AMT' => $amount,  // Use PAYMENTREQUEST_0_AMT instead of L_PAYMENTREQUEST_0_AMT0
                 'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD',
-                'CANCELURL' => $cancelUrl,  // Update this line
-                'RETURNURL' => $returnUrl,  // Update this line
+                'L_PAYMENTREQUEST_0_NAME0' => $productName,
+                'L_PAYMENTREQUEST_0_QTY0' => $quantity,
+                'L_PAYMENTREQUEST_0_AMT0' => $price,
+                'CANCELURL' => $cancelUrl,
+                'RETURNURL' => $returnUrl,
             );
         
             return $this->call($params);
         }
         
-        
-
-
         public function getExpressCheckoutDetails($token)
         {
             $params = array(

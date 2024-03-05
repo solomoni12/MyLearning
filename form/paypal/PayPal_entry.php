@@ -3,6 +3,7 @@
     require_once 'CallerService.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
         $productName = $_POST['productName'];
         $quantity = (int)$_POST['quantity'];
         $price = (int)$_POST['price'];
