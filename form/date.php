@@ -17,9 +17,6 @@
     
     echo "The time is " . date("h:i:sa") ."<br><br>";
 
-
-
-
     $tomorrow  = mktime(0, 0, 0, date("m")  , date("d")+1, date("Y"));
     $lastmonth = mktime(0, 0, 0, date("m")-1, date("d"),   date("Y"));
     $nextyear  = mktime(0, 0, 0, date("m"),   date("d"),   date("Y")+1);
@@ -34,5 +31,14 @@
     // Get the current weekday name
     $weekdayName = date("l");
 
-    echo "Today is: " . $weekdayName;
+    echo "Today is: " . $weekdayName . "<br><br>";
+
+    echo "The next day is " . date("Y-F-d", strtotime("+1 day")) ."<br>";
+
+    echo "The last day of the year is " . date("Y-F-d", strtotime("last day of December")) . "<br>";
+
+    echo "The last month of the year is " . date("Y-F", strtotime("last month"));
+
+
+
 ?>
