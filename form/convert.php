@@ -1,7 +1,7 @@
 <?php 
 
     // PHP String Functions
-    
+
     echo strtoupper("hello mwalupani") . "<br>";
     echo strtolower("HELLO MWALUPANI") . "<br>";
     echo lcfirst("HELLO MWALUPANI") . "<br>";
@@ -16,6 +16,9 @@
     }
     
     echo ucwordsLowerFirst("HELLO MWALUPANI") . "<br>";
-    
 
+    $str = '<a href="https://www.w3schools.com">Go to w3schools.com</a>';
+    echo htmlentities($str);
+
+    
 ?>
