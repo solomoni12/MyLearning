@@ -1,10 +1,12 @@
 <?php 
+
+    // PHP String Functions
+    
     echo strtoupper("hello mwalupani") . "<br>";
     echo strtolower("HELLO MWALUPANI") . "<br>";
     echo lcfirst("HELLO MWALUPANI") . "<br>";
     echo ucfirst("hello mwalupani") . "<br>";
     echo ucwords("hello mwalupani") . "<br>";
-    // echo lcwords("HELLO MWALUPANI") . "<br>";
 
     function ucwordsLowerFirst($inputString) {
         $words = explode(' ', $inputString);
