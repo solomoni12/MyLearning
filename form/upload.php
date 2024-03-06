@@ -7,11 +7,32 @@ if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = $token;
 }
 
+// $target_dir = "uploads/";
+// $sanitizedFileName = preg_replace("/[^a-zA-Z0-9.]/", "_", $_FILES["fileToUpload"]["name"]);
+// $target_file = $target_dir . basename($sanitizedFileName);
+// $uploadOk = 1;
+// $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
 $target_dir = "uploads/";
-$sanitizedFileName = preg_replace("/[^a-zA-Z0-9.]/", "_", $_FILES["fileToUpload"]["name"]);
+
+// Get the original file name
+$originalFileName = $_FILES["fileToUpload"]["name"];
+
+// Get the lowercase version of the original file name
+$lowercaseOriginalFileName = strtolower($originalFileName);
+
+// Sanitize the file name and get the lowercase version
+$sanitizedFileName = preg_replace("/[^a-zA-Z0-9.]/", "_", $lowercaseOriginalFileName);
+$lowercaseSanitizedFileName = strtolower($sanitizedFileName);
+
+// Combine the target directory and the sanitized file name
 $target_file = $target_dir . basename($sanitizedFileName);
+
 $uploadOk = 1;
+
+// Get the lowercase file extension
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
 
 // Check if image file is an actual image or fake image
 if (isset($_POST["submit"])) {
