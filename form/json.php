@@ -31,7 +31,7 @@
             "age" => "integer",
             "city" => "string"
         ]
-    ]; // Added a semicolon here
+    ]; 
 
     // Decode the JSON data
     $decodedData = json_decode($jsonData, true);
