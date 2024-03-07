@@ -28,10 +28,6 @@
     // var_dump($apiKey);
     // echo $apiKey;
     // exit();
-    echo "<pre>";
-    print_r($apiKey);
-    print_r($mailtrap);
-    exit();
 
     $email = (new Email())
         ->from(new Address('example@your-domain-here.com', 'Mailtrap Test'))
@@ -70,11 +66,17 @@
         
         // Category (should be only one)
         $email->getHeaders()
-        ->add(new CategoryHeader('Integration Test'))
-        ;
-        
+        ->add(new CategoryHeader('Integration Test'));
+        echo "API Key: $apiKey";
+        exit();
+
+
     try {
         $response = $mailtrap->sending()->emails()->send($email); // Email sending API (real)
+        var_dump($response);
+        // echo "<pre>";
+        // print_r($response);
+        // exit();
         
         var_dump(ResponseHelper::toArray($response)); // body (array)
     } catch (Exception $e) {
