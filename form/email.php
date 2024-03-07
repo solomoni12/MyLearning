@@ -83,9 +83,6 @@
 
 <html>
   <head>
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
       <style>
         .card{
           margin-top: 50px;
@@ -104,11 +101,13 @@
           color:gray;
         }
       </style>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
   </head>
   <body>
     <div class="card">
       <form  class ="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-      
+
         <h2 class = "text-title">Contact us</h2>
         <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
         <?php echo ((!empty($successMessage)) ? $successMessage : '') ?>
@@ -123,7 +122,7 @@
         </div>
         <div class="form-group">
           <label>Message:</label>
-          <textarea type="text" name="message" class="form-control" row = "4" required></textarea>
+          <textarea type="text" name="message" class="form-control" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
