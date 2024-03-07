@@ -9,8 +9,9 @@
     use Symfony\Component\Mime\Email;
     use Symfony\Component\Mime\Header\UnstructuredHeader;
 
-    require __DIR__ . '/vendor/autoload.php';
-
+    // require __DIR__ . '/vendor/autoload.php';
+    require '../vendor/autoload.php';
+ 
     // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenvPath = 'C:/xampp/htdocs/MyLearning/'; // Specify the path to your .env file
     $dotenv = Dotenv\Dotenv::createImmutable($dotenvPath);
