@@ -82,54 +82,51 @@
 ?>
 
 <html>
+  <head>
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-<head>
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+      <style>
+        .card{
+          margin-top: 50px;
+          margin-bottom: 50px;
+          margin-left: 150px;
+          margin-right: 150px;
+        }
+        .card-form{
+          margin-top: 50px;
+          margin-bottom: 50px;
+          margin-left: 150px;
+          margin-right: 150px;
+        }
+        .text-title{
+          text-align: center;
+          color:gray;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="card">
+      <form  class ="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+      
+        <h2 class = "text-title">Contact us</h2>
+        <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
+        <?php echo ((!empty($successMessage)) ? $successMessage : '') ?>
 
-    <style>
-      .card{
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-left: 150px;
-        margin-right: 150px;
-      }
-      .card-form{
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-left: 150px;
-        margin-right: 150px;
-      }
-      .text-title{
-        text-align: center;
-        color:gray;
-      }
-    </style>
-</head>
-
-<body>
-  <div class="card">
-    <form  class ="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-      <h2 class = "text-title">Contact us</h2>
-      <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
-      <?php echo ((!empty($successMessage)) ? $successMessage : '') ?>
-
-      <div class="form-group">
-        <label>Fulll Name:</label>
-        <input type="text" name="name" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label>Email Address:</label>
-        <input type="text" name="email" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label>Message:</label>
-        <textarea type="text" name="message" class="form-control" row = "4" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-
-</body>
-
+        <div class="form-group">
+          <label>Fulll Name:</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address:</label>
+          <input type="text" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Message:</label>
+          <textarea type="text" name="message" class="form-control" row = "4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </body>
 </html>
