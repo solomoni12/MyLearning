@@ -14,7 +14,8 @@
     "require": {
         "railsware/mailtrap-php": "^1.7",
         "symfony/http-client": "^5.4",
-        "nyholm/psr7": "^1.8"
+        "nyholm/psr7": "^1.8",
+        "vlucas/phpdotenv": "^5.6"
     },
     "config": {
         "allow-plugins": {

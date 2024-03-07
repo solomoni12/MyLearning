@@ -11,9 +11,26 @@
 
     require __DIR__ . '/vendor/autoload.php';
 
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    try {
+        $dotenv->load();
+    } catch (Exception $e) {
+        echo 'Error loading .env file: ', $e->getMessage();
+        exit();
+    }
+    // $dotenv->load();
+
     // your API token from here https://mailtrap.io/api-tokens
     $apiKey = getenv('MAILTRAP_API_KEY');
     $mailtrap = new MailtrapClient(new Config($apiKey));
+
+    var_dump($apiKey);
+    echo $apiKey;
+    exit();
+    echo "<pre>";
+    print_r($apiKey);
+    // print_r($mailtrap);
+    exit();
 
     $email = (new Email())
         ->from(new Address('example@your-domain-here.com', 'Mailtrap Test'))
