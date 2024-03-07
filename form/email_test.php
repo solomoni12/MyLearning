@@ -9,10 +9,8 @@
     use Symfony\Component\Mime\Email;
     use Symfony\Component\Mime\Header\UnstructuredHeader;
 
-    // require __DIR__ . '/vendor/autoload.php';
     require '../vendor/autoload.php';
  
-    // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenvPath = 'C:/xampp/htdocs/MyLearning/'; // Specify the path to your .env file
     $dotenv = Dotenv\Dotenv::createImmutable($dotenvPath);
 
@@ -22,7 +20,6 @@
         echo 'Error loading .env file: ', $e->getMessage();
         exit();
     }
-    // $dotenv->load();
 
     // your API token from here https://mailtrap.io/api-tokens
     $apiKey = getenv('MAILTRAP_API_KEY');
