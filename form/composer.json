@@ -1,8 +1,8 @@
 {
-    "name": "dev/my-learning",
+    "name": "dev/form",
     "autoload": {
         "psr-4": {
-            "Dev\\MyLearning\\": "src/"
+            "Dev\\Form\\": "src/"
         }
     },
     "authors": [
@@ -11,7 +11,5 @@
             "email": "mwalupani1234@gmail.com"
         }
     ],
-    "require": {
-        "phpmailer/phpmailer": "^6.9"
-    }
+    "require": {}
 }
