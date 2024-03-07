@@ -11,7 +11,10 @@
 
     require __DIR__ . '/vendor/autoload.php';
 
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    // $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenvPath = 'C:/xampp/htdocs/MyLearning/'; // Specify the path to your .env file
+    $dotenv = Dotenv\Dotenv::createImmutable($dotenvPath);
+
     try {
         $dotenv->load();
     } catch (Exception $e) {
