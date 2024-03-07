@@ -99,27 +99,31 @@ function sanitizeInput($input)
         margin-left: 150px;
         margin-right: 150px;
       }
+      .text-title{
+        text-align: center;
+        color:gray;
+      }
     </style>
 </head>
 
 <body>
   <div class="card">
     <form  class ="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-      <h2>Contact us</h2>
+      <h2 class = "text-title">Contact us</h2>
       <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
       <?php echo ((!empty($successMessage)) ? $successMessage : '') ?>
 
       <div class="form-group">
         <label>Fulll Name:</label>
-        <input type="text" class="form-control" id="exampleInputname" required>
+        <input type="text" name="name" class="form-control" required>
       </div>
       <div class="form-group">
         <label>Email Address:</label>
-        <input type="email" class="form-control" id="exampleInputemail" required>
+        <input type="email" name="email" class="form-control" required>
       </div>
       <div class="form-group">
         <label>Message:</label>
-        <textarea type="text" class="form-control" row = "4" required></textarea>
+        <textarea type="text" name="message" class="form-control" row = "4" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
