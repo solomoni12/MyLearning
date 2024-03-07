@@ -1,16 +1,11 @@
 <?php
 
-// require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/Exception.php';
-// require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/PHPMailer.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'C:\xampp\htdocs\MyLearning\form\PHPMailer\src\PHPMailer.php';
 require 'C:\xampp\htdocs\MyLearning\form\PHPMailer\src\Exception.php';
 require 'C:\xampp\htdocs\MyLearning\form\PHPMailer\src\SMTP.php';
-
-
-
 
 $errors = [];
 $errorMessage = '';
@@ -44,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $emailSubject = 'New email from your contact form';
 
         // Create a new PHPMailer instance
-        // $mail = new PHPMailer(true);
         $mail = new PHPMailer(true);
 
         try {
@@ -64,16 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->isHTML(true);
             $mail->Body = "<p>Name: {$name}</p><p>Email: {$email}</p><p>Message: {$message}</p>";
 
-            // echo "<pre>";
-            // print_r($mail);
-            // exit();
-            // Send the message
             $mail->send();
             // echo "<pre>";
             // print_r($mail);
             // exit();
 
-            $successMessage = "<p style='color: green;'>Thank you for contacting us :)</p>";
+            $successMessage = "<p style='color: green;'>Thank you for contacting us :</p>";
         } catch (Exception $e) {
             $errorMessage = "<p style='color: red;'>Oops, something went wrong. Please try again later</p>";
         }
