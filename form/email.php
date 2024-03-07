@@ -1,9 +1,15 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
 
-
+// require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/Exception.php';
+// require 'C:\xampp\htdocs\MyLearning\PHPMailer\src/PHPMailer.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
+require 'C:\xampp\htdocs\MyLearning\form\PHPMailer/src/PHPMailer.php';
+require 'C:\xampp\htdocs\MyLearning\form\PHPMailer/src/Exception.php';
+require 'C:\xampp/htdocs/MyLearning/form/PHPMailer/src/SMTP.php';
+
+
 
 
 $errors = [];
@@ -38,7 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $emailSubject = 'New email from your contact form';
 
         // Create a new PHPMailer instance
+        // $mail = new PHPMailer(true);
         $mail = new PHPMailer(true);
+
 
         try {
             // Configure the PHPMailer instance
