@@ -83,32 +83,48 @@ function sanitizeInput($input)
 <html>
 
 <head>
-    <!-- You can include your head content here -->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+      .card{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 150px;
+        margin-right: 150px;
+      }
+      .card-form{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 150px;
+        margin-right: 150px;
+      }
+    </style>
 </head>
 
 <body>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-        <h2>Contact us</h2>
-        <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
-        <?php echo ((!empty($successMessage)) ? $successMessage : '') ?>
+  <div class="card">
+    <form  class ="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+      <h2>Contact us</h2>
+      <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
+      <?php echo ((!empty($successMessage)) ? $successMessage : '') ?>
 
-        <div>
-            <label>First Name:</label>
-            <input name="name" type="text" required />
-        </div>
-
-        <div>
-            <label>Email Address:</label>
-            <input style="cursor: pointer;" name="email" type="email" required />
-        </div>
-        <p>
-            <label>Message:</label>
-            <textarea name="message" required></textarea>
-        </p>
-        <p>
-            <button type="submit">Submit</button>
-        </p>
+      <div class="form-group">
+        <label>Fulll Name:</label>
+        <input type="text" class="form-control" id="exampleInputname" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address:</label>
+        <input type="email" class="form-control" id="exampleInputemail" required>
+      </div>
+      <div class="form-group">
+        <label>Message:</label>
+        <textarea type="text" class="form-control" row = "4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+  </div>
+
 </body>
 
 </html>
