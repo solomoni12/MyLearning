@@ -50,10 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             // Configure the PHPMailer instance
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'sandbox.smtp.mailtrap.io';
             $mail->SMTPAuth = true;
-            $mail->Username = 'mwalupani1234@gmail.com';
-            $mail->Password = '';
+            $mail->Username = 'e077253dcde2d0';
+            $mail->Password = 'a8f3406b7e305a';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
@@ -69,9 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // exit();
             // Send the message
             $mail->send();
-            echo "<pre>";
-            print_r($mail);
-            exit();
+            // echo "<pre>";
+            // print_r($mail);
+            // exit();
 
             $successMessage = "<p style='color: green;'>Thank you for contacting us :)</p>";
         } catch (Exception $e) {
