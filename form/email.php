@@ -5,9 +5,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'C:\xampp\htdocs\MyLearning\form\PHPMailer/src/PHPMailer.php';
-require 'C:\xampp\htdocs\MyLearning\form\PHPMailer/src/Exception.php';
-require 'C:\xampp/htdocs/MyLearning/form/PHPMailer/src/SMTP.php';
+require 'C:\xampp\htdocs\MyLearning\form\PHPMailer\src\PHPMailer.php';
+require 'C:\xampp\htdocs\MyLearning\form\PHPMailer\src\Exception.php';
+require 'C:\xampp\htdocs\MyLearning\form\PHPMailer\src\SMTP.php';
 
 
 
@@ -47,14 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // $mail = new PHPMailer(true);
         $mail = new PHPMailer(true);
 
-
         try {
             // Configure the PHPMailer instance
             $mail->isSMTP();
-            $mail->Host = 'live.smtp.mailtrap.io';
+            $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = '';
-            $mail->Password = '';
+            $mail->Username = 'mwalupani1234@gmail.com';
+            $mail->Password = '200$OLOMONi';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
@@ -65,8 +64,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->isHTML(true);
             $mail->Body = "<p>Name: {$name}</p><p>Email: {$email}</p><p>Message: {$message}</p>";
 
+            // echo "<pre>";
+            // print_r($mail);
+            // exit();
             // Send the message
             $mail->send();
+            echo "<pre>";
+            print_r($mail);
+            exit();
 
             $successMessage = "<p style='color: green;'>Thank you for contacting us :)</p>";
         } catch (Exception $e) {
