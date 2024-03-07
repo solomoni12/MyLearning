@@ -25,12 +25,12 @@
     $apiKey = getenv('MAILTRAP_API_KEY');
     $mailtrap = new MailtrapClient(new Config($apiKey));
 
-    var_dump($apiKey);
-    echo $apiKey;
-    exit();
+    // var_dump($apiKey);
+    // echo $apiKey;
+    // exit();
     echo "<pre>";
     print_r($apiKey);
-    // print_r($mailtrap);
+    print_r($mailtrap);
     exit();
 
     $email = (new Email())
