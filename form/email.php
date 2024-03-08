@@ -129,6 +129,7 @@
   <body>
     <div class="card">
       <form class="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+
         <h2 class="text-title">Contact us</h2>
 
         <div class="messages">
@@ -145,10 +146,8 @@
                 </div>
                 <?php unset($_SESSION['error_message']); ?>
             <?php endif; ?>
-
-            <?php echo $errorMessage; ?>
-            <?php echo $successMessage; ?>
         </div>
+
         <div class="row">
           <div class="form-group col-6">
             <label>First Name:</label>
@@ -175,7 +174,9 @@
           <label>Message:</label>
           <textarea type="text" name="message" class="form-control" required></textarea>
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
+        
       </form>
     </div>
   </body>
