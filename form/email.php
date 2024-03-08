@@ -35,9 +35,7 @@
   
       if (empty($phone)) {
           $errors[] = 'Phone number is empty';
-      } else if (substr($phone, 0, 1) !== '0' || !ctype_digit($phone)) {
-          $errors[] = 'Phone number is invalid';
-      }
+      } 
   
       if (empty($message)) {
           $errors[] = 'Message is empty';
@@ -130,26 +128,24 @@
         <h2 class="text-title">Contact us</h2>
 
         <div class="messages">
-    <?php if (isset($_SESSION['success_message'])): ?>
-        <div class="alert alert-success" role="alert">
-            <?php echo $_SESSION['success_message']; ?>
+            <?php if (isset($_SESSION['success_message'])): ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $_SESSION['success_message']; ?>
+                </div>
+                <?php unset($_SESSION['success_message']); ?>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['error_message'])): ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['error_message']; ?>
+                </div>
+                <?php unset($_SESSION['error_message']); ?>
+            <?php endif; ?>
+
+            <?php echo $errorMessage; ?>
+            <?php echo $successMessage; ?>
         </div>
-        <?php unset($_SESSION['success_message']); ?>
-    <?php endif; ?>
-
-    <?php if (isset($_SESSION['error_message'])): ?>
-        <div class="alert alert-danger" role="alert">
-            <?php echo $_SESSION['error_message']; ?>
-        </div>
-        <?php unset($_SESSION['error_message']); ?>
-    <?php endif; ?>
-
-    <?php echo $errorMessage; ?>
-    <?php echo $successMessage; ?>
-</div>
-
-
-       <div class="row">
+        <div class="row">
           <div class="form-group col-6">
             <label>First Name:</label>
             <input type="text" name="fname" class="form-control" required>
