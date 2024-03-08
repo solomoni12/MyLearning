@@ -137,12 +137,12 @@
 
         <div class="row">
           <div class="form-group col-6">
-            <label for="phone number"> Phone Number</label>
-            <input type="text" name="phone" min="10" max="10" class="form-control" required>
-          </div>
-          <div class="form-group col-6">
             <label>Email Address:</label>
             <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="form-group col-6">
+            <label for="phone number"> Phone Number</label>
+            <input type="text" name="phone" min="10" max="10" class="form-control" required>
           </div>
         </div>
 
