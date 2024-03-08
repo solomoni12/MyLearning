@@ -111,8 +111,9 @@
           margin-right: 150px;
         }
         .text-title{
+
           text-align: center;
-          color:gray;
+          font-size: 30;
         }
 
         .messages {
@@ -130,7 +131,7 @@
     <div class="card">
       <form class="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
 
-        <h2 class="text-title">Contact us</h2>
+        <h5 class="text-title">Contact us</h5>
 
         <div class="messages">
             <?php if (isset($_SESSION['success_message'])): ?>
@@ -176,7 +177,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
-        
+
       </form>
     </div>
   </body>
