@@ -35,8 +35,6 @@
                 echo "$num is not a valid integer.";
                 echo "<br>";
             }
-
-        
         ?>
 
             <!-- PHP filter_list() Function -->
