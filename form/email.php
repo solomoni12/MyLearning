@@ -64,7 +64,7 @@
                 $mail->send();
 
                 $successMessage = "<p style='color: green;'>Thank you for contacting us! Your message has been successfully received. We appreciate your inquiry and will get back to you as soon as possible. If your matter is urgent, please call us at 0789026656.</p>";
-                
+
               } catch (Exception $e) {
                 $errorMessage = "<p style='color: red;'>Oops, something went wrong. Please try again later</p>";
             }
