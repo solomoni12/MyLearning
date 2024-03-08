@@ -80,6 +80,7 @@
 
         $allErrors = join('<br/>', $errors);
         $_SESSION['error_message'] = "<div class='alert alert-danger'>{$allErrors}</div>";
+        
         header("Location: {$_SERVER['PHP_SELF']}");
         exit;
       }
