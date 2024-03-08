@@ -36,7 +36,7 @@
 
         if (!empty($errors)) {
             $allErrors = join('<br/>', $errors);
-            $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+            $errorMessage = "<div class='alert alert-danger'>{$allErrors}</div>";
         } else {
             $toEmail = $email;
             $emailSubject = $name;
@@ -63,10 +63,10 @@
 
                 $mail->send();
 
-                $successMessage = "<p style='color: green;'>Thank you for contacting us! Your message has been successfully received. We appreciate your inquiry and will get back to you as soon as possible. If your matter is urgent, please call us at 0789026656.</p>";
+                $successMessage = "<div class='alert alert-success'>Thank you for contacting us! Your message has been successfully received. We appreciate your inquiry and will get back to you as soon as possible. If your matter is urgent, please call us at 0789026656.</div>";
 
-              } catch (Exception $e) {
-                $errorMessage = "<p style='color: red;'>Oops, something went wrong. Please try again later</p>";
+            } catch (Exception $e) {
+                $errorMessage = "<div class='alert alert-danger'>Oops, something went wrong. Please try again later</div>";
             }
         }
     }
@@ -78,7 +78,6 @@
         $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
         return $input;
     }
-
 ?>
 
 <html>
@@ -106,14 +105,13 @@
   </head>
   <body>
     <div class="card">
-      <form  class ="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-
-        <h2 class = "text-title">Contact us</h2>
-        <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
-        <?php echo ((!empty($successMessage)) ? $successMessage : '') ?>
+      <form class="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+        <h2 class="text-title">Contact us</h2>
+        <?php echo $errorMessage; ?>
+        <?php echo $successMessage; ?>
 
         <div class="form-group">
-          <label>Fulll Name:</label>
+          <label>Full Name:</label>
           <input type="text" name="name" class="form-control" required>
         </div>
         <div class="form-group">
