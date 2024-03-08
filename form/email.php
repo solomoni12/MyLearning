@@ -115,11 +115,9 @@
           text-align: center;
           font-size: 30;
         }
-
         .messages {
             margin-top: 20px;
         }
-
         .alert {
           margin-top: 10px;
         }
