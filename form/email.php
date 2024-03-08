@@ -22,16 +22,26 @@
         $emil = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
         $email = sanitizeInput($emil);
+        $phone = sanitizeInput($_POST['phone']);
+
         $message = sanitizeInput($_POST['message']);
 
         if (empty($fname) || empty($lname)) {
-            $errors[] = 'Name is empty';
+          $errors[] = 'Name is empty';
+        } else if (!ctype_alpha($fname) || !ctype_alpha($lname)) {
+            $errors[] = 'Name should only contain alphabetic characters';
         }
 
         if (empty($email)) {
             $errors[] = 'Email is empty';
         } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors[] = 'Email is invalid';
+        }
+
+        if (empty($phone)) {
+          $errors[] = 'Phone number is empty';
+        } else if (substr($phone, 0, 1) !== '0' || !ctype_digit($phone)) {
+            $errors[] = 'Phone number is invalid';
         }
 
         if (empty($message)) {
@@ -125,10 +135,16 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="phone number"> Phone Number</label>
+            <input type="text" name="phone" min="10" max="10" class="form-control" required>
+          </div>
+          <div class="form-group col-6">
             <label>Email Address:</label>
             <input type="email" name="email" class="form-control" required>
           </div>
+        </div>
 
         <div class="form-group">
           <label>Message:</label>
