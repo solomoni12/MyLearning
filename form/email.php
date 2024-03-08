@@ -12,7 +12,11 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $name = sanitizeInput($_POST['name']);
+        $fname = sanitizeInput($_POST['fname']);
+        $lname = sanitizeInput($_POST['lname']);
+
+        // take as one name
+        $name = $fname . " " . $lname;
         
         // sanitize email 
         $emil = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
@@ -20,7 +24,7 @@
         $email = sanitizeInput($emil);
         $message = sanitizeInput($_POST['message']);
 
-        if (empty($name)) {
+        if (empty($fname) || empty($lname)) {
             $errors[] = 'Name is empty';
         }
 
@@ -39,7 +43,7 @@
             $errorMessage = "<div class='alert alert-danger'>{$allErrors}</div>";
         } else {
             $toEmail = $email;
-            $emailSubject = $name;
+            $emailSubject = $fname ." ". $lname ;
 
             // Create a new PHPMailer instance
             $mail = new PHPMailer(true);
@@ -110,14 +114,22 @@
         <?php echo $errorMessage; ?>
         <?php echo $successMessage; ?>
 
-        <div class="form-group">
-          <label>Full Name:</label>
-          <input type="text" name="name" class="form-control" required>
+       <div class="row">
+          <div class="form-group col-6">
+            <label>First Name:</label>
+            <input type="text" name="fname" class="form-control" required>
+          </div>
+          <div class="form-group col-6">
+            <label>Last Name:</label>
+            <input type="text" name="lname" class="form-control" required>
+          </div>
         </div>
+
         <div class="form-group">
-          <label>Email Address:</label>
-          <input type="text" name="email" class="form-control" required>
-        </div>
+            <label>Email Address:</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+
         <div class="form-group">
           <label>Message:</label>
           <textarea type="text" name="message" class="form-control" required></textarea>
