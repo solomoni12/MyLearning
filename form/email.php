@@ -38,7 +38,7 @@
             $allErrors = join('<br/>', $errors);
             $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
         } else {
-            $toEmail = 'mailtrap.club@gmail.com';
+            $toEmail = $email;
             $emailSubject = $name;
 
             // Create a new PHPMailer instance
