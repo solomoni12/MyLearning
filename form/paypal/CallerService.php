@@ -28,6 +28,10 @@
 
             $response = curl_exec($ch);
 
+            echo "<pre>";
+            print_r($response);
+            exit;
+
             if (curl_errno($ch)) {
                 die('Curl error: ' . curl_error($ch));
             }
@@ -41,13 +45,16 @@
 
         public function setExpressCheckout($productName, $quantity, $price, $cancelUrl, $returnUrl)
         {
-            $itemAmount = number_format($quantity * $price, 2, '.', ''); 
+            $itemAmount = number_format($quantity * $price, 2, '.', '');
+        
+            // Debug output for $itemAmount
+            echo "Item Amount: " . $itemAmount;
         
             $params = array(
                 'METHOD' => 'SetExpressCheckout',
                 'PAYMENTREQUEST_0_PAYMENTACTION' => 'Sale',
                 'PAYMENTREQUEST_0_ITEMAMT' => $itemAmount,
-                'PAYMENTREQUEST_0_AMT' => $itemAmount, 
+                'PAYMENTREQUEST_0_AMT' => $itemAmount,
                 'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD',
                 'PAYMENTREQUEST_0_DESC' => $productName,
                 'L_PAYMENTREQUEST_0_NAME0' => $productName,
@@ -58,9 +65,7 @@
             );
         
             return $this->call($params);
-        }
-        
-
+        }       
         
         public function getExpressCheckoutDetails($token)
         {
