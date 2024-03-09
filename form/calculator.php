@@ -34,7 +34,7 @@
         <form class="card-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
 
            <div class="form-group">
-            <input class="form-control" type="text" name="num01" placeholder="Number one" required>
+            <input class="form-control" type="number" name="num01" placeholder="Number one" required>
            </div>
 
            <div class="form-group select-field">
@@ -47,7 +47,7 @@
            </div>
 
             <div class="form-group">
-                <input class="form-control" type="text" name="num02" placeholder="Number two" required>
+                <input class="form-control" type="number" name="num02" placeholder="Number two" required>
             </div>
 
             <button class="btn btn-primary" >calculate</button>
@@ -63,14 +63,6 @@
             $num01 = filter_input(INPUT_POST, "num01", FILTER_SANITIZE_NUMBER_FLOAT);
             $num02 = filter_input(INPUT_POST, "num02", FILTER_SANITIZE_NUMBER_FLOAT);
             $operator = htmlspecialchars($_POST["operator"]);
-
-            // echo "<pre>";
-            // print_r($num01);
-            // echo "<pre>";
-            // print_r($num02);
-            // echo "<pre>";
-            // print_r($operator);
-            // exit();
 
             $error = false;
 
