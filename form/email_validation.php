@@ -17,6 +17,12 @@
                 margin-left: 300px;
                 margin-right: 300px;
             }
+            .table-card{
+                margin-top: 50px;
+                margin-bottom: 20px;
+                margin-right: 200px;
+                margin-left: 200px;
+            }
         </style>
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -45,8 +51,6 @@
                 }
             }
 
-
-            // Valiidate integer
             $num = "42";
 
             if (filter_var($num, FILTER_VALIDATE_INT) !== false) {
@@ -59,18 +63,23 @@
         ?>
 
             <!-- PHP filter_list() Function -->
-        <table>
-            <tr>
-                <td>Filter Name</td>
-                <td>Filter ID</td>
-            </tr>
-            <?php
-                foreach (filter_list() as $id =>$filter) {
-                    echo '<tr><td>' . $filter . '</td><td>' . filter_id($filter) . '</td></tr>';
-                }
-            ?>
-        </table>
-
+        <div class="table-card">
+            <table class="table table-bordered" >
+                    <thead>
+                        <tr>
+                            <td scope="col">Filter Name</td>
+                            <td scope="col">Filter ID</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach (filter_list() as $id =>$filter) {
+                                echo '<tr><td scope="row">' . $filter . '</td><td>' . filter_id($filter) . '</td></tr>';
+                            }
+                        ?>
+                    </tbody>
+            </table>
+        </div>
         <?php 
 
                 $email = "//mwalupani1234@gmail.com///";
