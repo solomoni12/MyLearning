@@ -8,8 +8,8 @@
         .card{
             margin-top: 20px;
             margin-bottom: 10px;
-            margin-left: 100px;
-            margin-right: 100px;
+            margin-left: 300px;
+            margin-right: 300px;
         }
         .card-form{
             margin-top: 20px;
