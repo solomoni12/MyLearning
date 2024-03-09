@@ -92,12 +92,13 @@
                 $obj->printFoo();
 
 
+                
+
                 function first($x, $y) {
                     return $x * ++$y;
-                    }
-                    $n = 5;
-                    mkdir('./testDir');
-                    echo first($n, 3), DIRECTORY_SEPARATOR, 'testDir';
+                }
+                $n = 5;
+                echo first($n, 3), DIRECTORY_SEPARATOR, 'testDir';
 
         ?>
     </body>
