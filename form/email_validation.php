@@ -4,18 +4,39 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <style>
+            .card{
+                margin-top: 50px;
+                margin-bottom: 20px;
+                margin-left: 200px;
+                margin-right: 300px;
+            }
+            .card-form{
+                margin-top: 50px;
+                margin-bottom: 20px;
+                margin-left: 300px;
+                margin-right: 300px;
+            }
+        </style>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
     </head>
     <body>
-        <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-            E-mail: <input type="text" name="email">
-            <input type="submit" name="submit" value="Submit"> 
-        </form>
+       <div class="card">
+            <form class="card-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+                <div class="form-group">
+                    <label for="Email">E-mail:</label>
+                    <input type="text" name="email" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+       </div>
 
         <?php
-            if (isset($_GET["email"])) {
+            if (isset($_POST["email"])) {
 
-
-                if (!filter_input(INPUT_GET, "email", FILTER_VALIDATE_EMAIL) === false) {
+                if (!filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL) === false) {
                     echo("Email is valid");
                     echo "<br>";
                 } else {
