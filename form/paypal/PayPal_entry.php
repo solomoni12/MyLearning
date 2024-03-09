@@ -1,49 +1,57 @@
 <?php
-    require_once 'constants.php';
-    require_once 'CallerService.php';
+session_start();
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+require_once 'constants.php';
+require_once 'CallerService.php';
+require_once 'confirmation.php';
 
-        $productName = $_POST['productName'];
-        $quantity = (int)$_POST['quantity'];
-        $price = (int)$_POST['price'];
+$csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
+echo "CSRF Token received: " . $csrf_token;
 
-        $amount = $quantity * $price;
+if (!validateCSRFToken($csrf_token)) {
+    die('Invalid CSRF token. Form submission rejected.');
+}
 
-        // Create an instance of the CallerService class
-        $caller = new CallerService();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $productName = $_POST['productName'];
+    $quantity = (int)$_POST['quantity'];
+    $price = (float)$_POST['price'];  // Changed to float to allow decimals
 
+    $amount = $quantity * $price;
 
-        // Initiate SetExpressCheckout
-        $response = $caller->setExpressCheckout($productName, $quantity, $price, 'http://localhost/MyLearning/form/paypal/cancel.php', 'http://localhost/MyLearning/form/paypal/success.php');
+    // Create an instance of the CallerService class
+    $caller = new CallerService();
 
-        // Debug output for response
-        echo "<pre>";
-        print_r($response);
+    // Initiate SetExpressCheckout
+    $response = $caller->setExpressCheckout($productName, $quantity, $price, 'http://localhost/MyLearning/form/paypal/cancel.php', 'http://localhost/MyLearning/form/paypal/success.php');
+
+    // Debug output for response
+    echo "<pre>";
+    print_r($response);
+    exit();
+
+    if ($response['ACK'] == 'Success') {
+        $token = $response['TOKEN'];
+
+        // Store necessary data in session for use in DoExpressCheckoutPayment
+        $_SESSION['productName'] = $productName;
+        $_SESSION['quantity'] = $quantity;
+        $_SESSION['price'] = $price;
+        $_SESSION['amount'] = $amount;
+        $_SESSION['token'] = $token;
+
+        // Redirect to PayPal
+        header("Location: " . PAYPAL_URL . $token);
         exit();
-
-        if ($response['ACK'] == 'Success') {
-            $token = $response['TOKEN'];
-
-            // Store necessary data in session for use in DoExpressCheckoutPayment
-            $_SESSION['productName'] = $productName;
-            $_SESSION['quantity'] = $quantity;
-            $_SESSION['price'] = $price;
-            $_SESSION['amount'] = $amount;
-            $_SESSION['token'] = $token;
-
-            // Redirect to PayPal
-            header("Location: " . PAYPAL_URL . $token);
-            exit();
-        } else {
-            // Handle the error
-            echo "Error: " . $response['L_LONGMESSAGE0'];
-            exit(); 
-        }
     } else {
-        echo "Form not submitted.";
-
-        header('Location: confirmation.php');
+        // Handle the error
+        echo "Error: " . $response['L_LONGMESSAGE0'];
         exit(); 
     }
+} else {
+    echo "Form not submitted.";
+
+    header('Location: confirmation.php');
+    exit(); 
+}
 ?>
