@@ -16,10 +16,8 @@
             $params['PWD'] = 'UUCXUCTBJFP43DBJ';
             $params['SIGNATURE'] = 'AZ-C-mHL0b0aK9g8-.AvDULDjdkZAhcA-R2w9wQ9mM6sYo-eb0NwUiRB';
 
-            // Initialize cURL session
             $ch = curl_init();
 
-            // Set cURL options
             curl_setopt($ch, CURLOPT_URL, $this->apiEndpoint);
             curl_setopt($ch, CURLOPT_VERBOSE, 1);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -28,18 +26,14 @@
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
 
-            // Execute cURL session and get the response
             $response = curl_exec($ch);
 
-            // Check for cURL errors
             if (curl_errno($ch)) {
                 die('Curl error: ' . curl_error($ch));
             }
 
-            // Close cURL session
             curl_close($ch);
 
-            // Parse the response
             parse_str($response, $parsedResponse);
 
             return $parsedResponse;
@@ -47,13 +41,15 @@
 
         public function setExpressCheckout($productName, $quantity, $price, $cancelUrl, $returnUrl)
         {
-            $amount = number_format($quantity * $price, 2, '.', '');
+            $itemAmount = number_format($quantity * $price, 2, '.', ''); 
         
             $params = array(
                 'METHOD' => 'SetExpressCheckout',
                 'PAYMENTREQUEST_0_PAYMENTACTION' => 'Sale',
-                'PAYMENTREQUEST_0_AMT' => $amount,  // Use PAYMENTREQUEST_0_AMT instead of L_PAYMENTREQUEST_0_AMT0
+                'PAYMENTREQUEST_0_ITEMAMT' => $itemAmount,
+                'PAYMENTREQUEST_0_AMT' => $itemAmount, 
                 'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD',
+                'PAYMENTREQUEST_0_DESC' => $productName,
                 'L_PAYMENTREQUEST_0_NAME0' => $productName,
                 'L_PAYMENTREQUEST_0_QTY0' => $quantity,
                 'L_PAYMENTREQUEST_0_AMT0' => $price,
@@ -63,6 +59,8 @@
         
             return $this->call($params);
         }
+        
+
         
         public function getExpressCheckoutDetails($token)
         {
