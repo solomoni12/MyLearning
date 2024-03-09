@@ -92,7 +92,7 @@
                 $obj->printFoo();
 
 
-                
+
 
                 function first($x, $y) {
                     return $x * ++$y;
