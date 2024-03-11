@@ -26,14 +26,14 @@
             .card{
                 margin-top: 20px;
                 margin-bottom: auto;
-                margin-left: 100px;
-                margin-right: 100px;
+                margin-left: 300px;
+                margin-right: 300px;
             }
             .card-form{
                 margin-top: 10px;
                 margin-bottom: 20px;
-                margin-left: 100px;
-                margin-right: 100px;
+                margin-left: 200px;
+                margin-right: 200px;
             }
         </style>
 
