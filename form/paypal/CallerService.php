@@ -28,9 +28,9 @@
 
             $response = curl_exec($ch);
 
-            echo "<pre>";
-            print_r($response);
-            exit;
+            // echo "<pre>";
+            // print_r($response);
+            // exit;
 
             if (curl_errno($ch)) {
                 die('Curl error: ' . curl_error($ch));
