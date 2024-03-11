@@ -30,18 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($response['ACK'] == 'Success') {
         $token = $response['TOKEN'];
 
-        // Store necessary data in session for use in DoExpressCheckoutPayment
         $_SESSION['productName'] = $productName;
         $_SESSION['quantity'] = $quantity;
         $_SESSION['price'] = $price;
         $_SESSION['amount'] = $amount;
         $_SESSION['token'] = $token;
 
-        // Redirect to PayPal
         header("Location: " . PAYPAL_URL . $token);
         exit();
     } else {
-        // Handle the error
         echo "Error: " . $response['L_LONGMESSAGE0'];
         exit();
     }
