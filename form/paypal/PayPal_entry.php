@@ -8,6 +8,7 @@ require_once 'CallerService.php';
 require_once 'confirmation.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $csrf_token = filter_input(INPUT_POST, 'csrf_token', FILTER_SANITIZE_STRING);
 
     if (!validateCSRFToken($csrf_token)) {
