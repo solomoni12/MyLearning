@@ -24,6 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $caller = new CallerService();
     $response = $caller->setExpressCheckout($productName, $quantity, $price, 'http://localhost/MyLearning/form/paypal/cancel.php', 'http://localhost/MyLearning/form/paypal/success.php');
 
+        echo "<pre>";
+        print_r($response);
+        exit;
     if ($response['ACK'] == 'Success') {
         $token = $response['TOKEN'];
 
