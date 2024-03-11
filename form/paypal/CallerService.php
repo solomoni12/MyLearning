@@ -48,7 +48,7 @@
             $itemAmount = number_format($quantity * $price, 2, '.', '');
         
             // Debug output for $itemAmount
-            echo "Item Amount: " . $itemAmount;
+            // echo "Item Amount: " . $itemAmount;
         
             $params = array(
                 'METHOD' => 'SetExpressCheckout',
@@ -84,7 +84,7 @@
                 'TOKEN' => $token,
                 'PAYERID' => $payerId,
                 'PAYMENTREQUEST_0_PAYMENTACTION' => 'Sale',
-                'PAYMENTREQUEST_0_AMT' => $amount,
+                'PAYMTREENQUEST_0_AMT' => $amount,
                 'PAYMENTREQUEST_0_CURRENCYCODE' => 'USD',
             );
 
