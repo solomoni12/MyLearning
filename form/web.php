@@ -193,6 +193,7 @@
         <!-- contact end -->
 
         <hr>
+        
         <!-- footer start -->
         <footer>
             <div class="row">
