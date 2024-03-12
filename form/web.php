@@ -130,19 +130,19 @@
         <div id="team" class="row p-5 my-4 bg-light">
                 <h2 class="title" >Our Team</h2>
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
                     <p class="text">Solomon Mwalupani</p>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <img src="../form/img/Genesis.jpeg" class="img-fluid rounded-circle" alt="Cover Image">
                     <p class="text">Solomon Mwalupani</p>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid rounded-image" alt="Cover Image">
+                    <img src="../form/img/person avatar.jpg" class="img-fluid rounded-circle" alt="Cover Image">
                     <p class="text">Solomon Mwalupani</p>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
                     <p class="text">Solomon Mwalupani</p>
                 </div>
         </div>
