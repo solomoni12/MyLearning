@@ -166,6 +166,17 @@
                         </div>
                     </div>
                     <div class="row mb-3">
+                        <label for="Gender" class="col-sm-2 col-form-label">Gender</label>
+                        <div class="col-sm-10">
+                            <select name="sex" id="sex" class="form-control" required>
+                            <option value="male">Select gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <label for="message" class="col-sm-2 col-form-label">Message</label>
                         <div class="col-sm-10">
                             <textarea type="text" class="form-control" id="message" placeholder="Your message" required></textarea>
