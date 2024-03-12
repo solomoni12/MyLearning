@@ -97,23 +97,25 @@
 
         <!-- service start -->
         <div id="service" class="row p-5 my-4 bg-light">
-            <div class="row g-3">
-               <h2 class="title" >our service</h2>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <h2 class="h-title">Full Stack Web Development</h2>
-                    <p>Our expert Full-Stack Web Developers are ready to bring your digital vision to life. From dynamic websites to robust web applications, we specialize in creating cutting-edge solutions tailored to your unique needs.</p>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <h2 class="h-title">Mobile App Design</h2>
-                    <p>Dive into the world of mobile innovation with our user-friendly and visually stunning mobile app designs. Whether it's iOS, Android, or cross-platform development, we craft mobile experiences that captivate and engage your audience.</p>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <h2 class="h-title">ICT Support and Consultation</h2>
-                    <p>Need tech assistance or advice? Our dedicated team provides comprehensive ICT support and consultation services. From troubleshooting issues to strategic planning, we ensure your systems run smoothly and efficiently.</p>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <h2 class="h-title">Responsive System Development</h2>
-                    <p>We excel in crafting responsive systems that adapt seamlessly to various devices and screen sizes. Our goal is to ensure your digital presence is not only visually appealing but also functional and accessible to all users.</p>
+            <div class="m-4">
+                <div class="row g-3">
+                <h2 class="title" >our service</h2>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <h2 class="h-title">Full Stack Web Development</h2>
+                        <p>Our expert Full-Stack Web Developers are ready to bring your digital vision to life. From dynamic websites to robust web applications, we specialize in creating cutting-edge solutions tailored to your unique needs.</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <h2 class="h-title">Mobile App Design</h2>
+                        <p>Dive into the world of mobile innovation with our user-friendly and visually stunning mobile app designs. Whether it's iOS, Android, or cross-platform development, we craft mobile experiences that captivate and engage your audience.</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <h2 class="h-title">ICT Support and Consultation</h2>
+                        <p>Need tech assistance or advice? Our dedicated team provides comprehensive ICT support and consultation services. From troubleshooting issues to strategic planning, we ensure your systems run smoothly and efficiently.</p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                        <h2 class="h-title">Responsive System Development</h2>
+                        <p>We excel in crafting responsive systems that adapt seamlessly to various devices and screen sizes. Our goal is to ensure your digital presence is not only visually appealing but also functional and accessible to all users.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,23 +123,23 @@
 
         <!-- our team start -->
         <div id="team" class="row p-5 my-4 bg-light">
-            <h2 class="title" >Our Team</h2>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
-                <p class="text">Solomon Mwalupani</p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
-                <p class="text">Solomon Mwalupani</p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
-                <p class="text">Solomon Mwalupani</p>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-3">
-                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
-                <p class="text">Solomon Mwalupani</p>
-            </div>
+                <h2 class="title" >Our Team</h2>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div>
         </div>
         <!-- our team end -->
 
