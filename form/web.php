@@ -16,10 +16,19 @@
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
-        <style>
-        /* .container{
-            background-color: red;
-        } */
+    <style>
+       .h-title{
+
+            color: black;
+            text-align: center;
+            font-size: 18px;
+
+       }
+       .title{
+            color: black;
+            text-align: center;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -43,6 +52,7 @@
         </nav>
     </div>
     <div class="container">
+        <!-- home start -->
         <div id="home" class="row p-5 my-4 bg-light">
             <div class="col-md-8">
                 <div id="carouselExample" class="carousel slide" data-ride="carousel">
@@ -69,6 +79,9 @@
                 <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
             </div>
         </div>
+        <!-- home end -->
+
+        <!-- about start -->
         <div id="about" class="row p-5 my-4 bg-light">
             <div class="col-md-8">
                 <div id="carouselExample" class="carousel slide" data-ride="carousel">
@@ -95,32 +108,33 @@
                 <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
             </div>
         </div>
+        <!-- about end -->
+
+        <!-- service start -->
         <div id="service" class="row p-5 my-4 bg-light">
-            <div class="col-md-8">
-                <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div>
-                                <h1>HELLO I AM </h1>
-                                <p>Solomon Developer</p>
-                                <h6>welcome to my site, change the word with solomon developer.</h6>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div>
-                                <h1>HELLO I AM </h1>
-                                <p>Full Stack Developer</p>
-                                <h6>welcome to my site, change the word with solomon developer.</h6>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row g-3">
+               <h2 class="title" >our service</h2>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <h2 class="h-title">Full Stack Web Development</h2>
+                    <p>Our expert Full-Stack Web Developers are ready to bring your digital vision to life. From dynamic websites to robust web applications, we specialize in creating cutting-edge solutions tailored to your unique needs.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <h2 class="h-title">Mobile App Design</h2>
+                    <p>Dive into the world of mobile innovation with our user-friendly and visually stunning mobile app designs. Whether it's iOS, Android, or cross-platform development, we craft mobile experiences that captivate and engage your audience.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <h2 class="h-title">ICT Support and Consultation</h2>
+                    <p>Need tech assistance or advice? Our dedicated team provides comprehensive ICT support and consultation services. From troubleshooting issues to strategic planning, we ensure your systems run smoothly and efficiently.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <h2 class="h-title">Responsive System Development</h2>
+                    <p>We excel in crafting responsive systems that adapt seamlessly to various devices and screen sizes. Our goal is to ensure your digital presence is not only visually appealing but also functional and accessible to all users.</p>
                 </div>
             </div>
-            
-            <div class="col-md-4">
-                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
-            </div>
         </div>
+        <!-- service end -->
+
+        <!-- our team start -->
         <div id="team" class="row p-5 my-4 bg-light">
             <div class="col-md-8">
                 <div id="carouselExample" class="carousel slide" data-ride="carousel">
@@ -147,37 +161,40 @@
                 <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
             </div>
         </div>
+        <!-- our team end -->
+
+        <!-- contact start -->
         <div id="contact" class="row p-5 my-4 bg-light">
             <div class="m-4">
-                <form action="/examples/actions/confirmation.php" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                    <div class="row mb-3">
+                        <label for="name" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="name" class="form-control" id="iname" placeholder="Your name" required>
+                        </div>
+                    </div>
                     <div class="row mb-3">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Your email" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <label for="message" class="col-sm-2 col-form-label">Message</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-10 offset-sm-2">
-                            <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="checkRemember">
-                                    <label class="form-check-label" for="checkRemember">Remember me</label>
-                            </div>
+                            <textarea type="text" class="form-control" id="message" placeholder="Your message" required></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-10 offset-sm-2">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+        <!-- contact end -->
+
         <hr>
         <footer>
                 <div class="row">
