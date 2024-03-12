@@ -18,16 +18,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
     <style>
        .h-title{
-
             color: black;
             text-align: center;
             font-size: 18px;
-
        }
        .title{
             color: black;
             text-align: center;
             font-size: 20px;
+        }
+        .text{
+            text-align: center;
         }
     </style>
 </head>
@@ -83,29 +84,13 @@
 
         <!-- about start -->
         <div id="about" class="row p-5 my-4 bg-light">
-            <div class="col-md-8">
-                <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div>
-                                <h1>HELLO I AM </h1>
-                                <p>Solomon Developer</p>
-                                <h6>welcome to my site, change the word with solomon developer.</h6>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div>
-                                <h1>HELLO I AM </h1>
-                                <p>Full Stack Developer</p>
-                                <h6>welcome to my site, change the word with solomon developer.</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+            <h2 class="title" >Who we are</h2>
+            <div class="m-4">
+                <p>At Sologroup, we are more than a team; we're a community of tech enthusiasts with a passion for creating digital excellence. With over 2+ years of experience, we're here to be your trusted guides in the rapidly evolving landscape of technology.</p>
+                <p><strong>Experience</strong>: With over 2+ years of hands-on experience, our team brings a wealth of knowledge and expertise to every project. <br>
+                <p><strong>Collaboration</strong>: We believe in working closely with our clients, understanding their goals, and ensuring a collaborative and transparent development process.</p>
+                <p><strong>Comprehensive Solutions</strong>: From crafting responsive websites to designing user-friendly mobile apps, we offer a range of services to meet all your digital needs.</p>
+                <p><strong>Innovation</strong>: At Sologroup, we thrive on pushing boundaries and embracing the latest in technology to deliver innovative solutions.</p></p>
             </div>
         </div>
         <!-- about end -->
@@ -136,29 +121,22 @@
 
         <!-- our team start -->
         <div id="team" class="row p-5 my-4 bg-light">
-            <div class="col-md-8">
-                <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div>
-                                <h1>HELLO I AM </h1>
-                                <p>Solomon Developer</p>
-                                <h6>welcome to my site, change the word with solomon developer.</h6>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div>
-                                <h1>HELLO I AM </h1>
-                                <p>Full Stack Developer</p>
-                                <h6>welcome to my site, change the word with solomon developer.</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
+            <h2 class="title" >Our Team</h2>
+            <div class="col-md-6 col-lg-4 col-xl-3">
                 <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                <p class="text">Solomon Mwalupani</p>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                <p class="text">Solomon Mwalupani</p>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                <p class="text">Solomon Mwalupani</p>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                <p class="text">Solomon Mwalupani</p>
             </div>
         </div>
         <!-- our team end -->
@@ -166,6 +144,7 @@
         <!-- contact start -->
         <div id="contact" class="row p-5 my-4 bg-light">
             <div class="m-4">
+                <h2 class="title" >Contact us</h2>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                     <div class="row mb-3">
                         <label for="name" class="col-sm-2 col-form-label">Name</label>
