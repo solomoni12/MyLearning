@@ -30,6 +30,11 @@
         .text{
             text-align: center;
         }
+        .rounded-image {
+            border-radius: 50%;
+            width: 100%; 
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -133,7 +138,7 @@
                     <p class="text">Solomon Mwalupani</p>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid" alt="Cover Image">
+                    <img src="../form/img/avatar.png" class="img-fluid rounded-image" alt="Cover Image">
                     <p class="text">Solomon Mwalupani</p>
                 </div>
                 <div class="col-md-6 col-lg-4 col-xl-3">
