@@ -38,7 +38,9 @@
     </style>
 </head>
 <body>
+   
     <div class="m-4">
+         <!-- navbar start -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a href="#home" class="navbar-brand">Demo</a>
@@ -56,7 +58,9 @@
                 </div>
             </div>
         </nav>
+        <!-- navbar end -->
     </div>
+
     <div class="container">
         <!-- home start -->
         <div id="home" class="row p-5 my-4 bg-light">
@@ -193,7 +197,7 @@
         <!-- contact end -->
 
         <hr>
-        
+
         <!-- footer start -->
         <footer>
             <div class="row">
