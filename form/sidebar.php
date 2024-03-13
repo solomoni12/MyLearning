@@ -10,32 +10,6 @@
     <!-- bootstrap -->
   </head>
   <body>
-    <div class="m-4">
-      <div class="card" style="width: 300px;">
-          <img src="../form/img/person avatar.jpg" class="card-img-top rounded-circle" alt="...">
-          <div class="card-body text-center">
-              <h5 class="card-title">Alice Liddel</h5>
-              <p class="card-text">Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
-              <a href="#" class="btn btn-primary">View Profile</a>
-          </div>
-      </div>
-    </div>
 
-    <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/Genesis.jpeg" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/person avatar.jpg" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
-                </div> 
   </body>
 </html>
