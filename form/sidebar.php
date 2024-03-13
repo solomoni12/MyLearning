@@ -20,5 +20,22 @@
           </div>
       </div>
     </div>
+
+    <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/Genesis.jpeg" class="img-fluid rounded-circle" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/person avatar.jpg" class="img-fluid rounded-circle" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
+                    <p class="text">Solomon Mwalupani</p>
+                </div> 
   </body>
 </html>

@@ -131,25 +131,46 @@
         <!-- service end -->
 
         <!-- our team start -->
-        <div id="team" class="row p-5 my-4 bg-light">
-                <h2 class="title" >Our Team</h2>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
+        <div id="team" class="row p-5 my-4 bg-light justify-content-center">
+            <h2 class="title">Our Team</h2>
+
+            <div class="card col-md-4 mb-4">
+                <img src="../form/img//Genesis.jpeg" class="card-img-top rounded-circle" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Solomon Mwalupani</h5>
+                    <p class="card-text">
+                        Solomon is a freelance web designer and developer based in Tanzania. 
+                        He is specialized in PHP, JAVA, HTML5, CSS3, JavaScript, Bootstrap, etc.
+                    </p>
+                    <a href="https://solo.co.tz/" class="btn btn-primary">View Profile</a>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/Genesis.jpeg" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
+            </div>
+
+            <div class="card col-md-4 mb-4">
+                <img src="../form/img/person avatar.jpg" class="card-img-top rounded-circle" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Solomon Mwalupani</h5>
+                    <p class="card-text">
+                        Solomon is a freelance web designer and developer based in Tanzania.
+                        He is specialized in PHP, JAVA, HTML5, CSS3, JavaScript, Bootstrap, etc.
+                    </p>
+                    <a href="https://sologroup.solo.co.tz/" class="btn btn-primary">View Profile</a>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/person avatar.jpg" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
+            </div>
+
+            <div class="card col-md-4 mb-4">
+                <img src="../form/img/person avatar.jpg" class="card-img-top rounded-circle" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Solomon Mwalupani</h5>
+                    <p class="card-text">
+                        Solomon is a freelance web designer and developer based in Tanzania.
+                        He is specialized in PHP, JAVA, HTML5, CSS3, JavaScript, Bootstrap, etc.
+                    </p>
+                    <a href="https://github.com/solomoni12/" class="btn btn-primary">View Profile</a>
                 </div>
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <img src="../form/img/avatar.png" class="img-fluid rounded-circle" alt="Cover Image">
-                    <p class="text">Solomon Mwalupani</p>
-                </div>
+            </div>
         </div>
+
         <!-- our team end -->
 
         <!-- contact start -->
