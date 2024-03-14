@@ -13,34 +13,3 @@
   
   </body>
 </html>
-
-<?php
-  // Recipient email address
-  $to = 'mwalupani1234@gmail.com';
-
-  // Email subject
-  $subject = 'Marriage Proposal';
-
-  // Email message
-  $message = 'Hi mwalupani1234@email.com,
-
-  This is a proposal for marriage. Will you marry me?
-
-  Sincerely,
-  Your Name';
-
-  // Sender email address
-  $from = 'mwalupani1234@gmail.com';
-
-  // Additional headers
-  $headers = 'From: ' . $from . "\r\n" .
-      'Reply-To: ' . $from . "\r\n" .
-      'X-Mailer: PHP/' . phpversion();
-
-  // Sending email
-  if(mail($to, $subject, $message, $headers)){
-      echo 'Your mail has been sent successfully.';
-  } else{
-      echo 'Unable to send email. Please try again.';
-  }
-?>
