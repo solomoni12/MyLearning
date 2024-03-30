@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seasons Pie Chart</title>
+<style>
+  .pie-chart {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+  }
+
+  .slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 100px, 200px, 0);
+  }
+
+  .slice .half-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    clip: rect(0, 100px, 200px, 0);
+  }
+
+  .slice .half-circle.spring {
+    background-color: #7ac142; /* Green for Spring */
+    transform: rotate(0deg);
+  }
+
+  .slice .half-circle.summer {
+    background-color: #f9cb40; /* Yellow for Summer */
+    transform: rotate(90deg);
+  }
+
+  .slice .half-circle.autumn {
+    background-color: #ff6347; /* Red for Autumn */
+    transform: rotate(180deg);
+  }
+
+  .slice .half-circle.winter {
+    background-color: #5fc9f8; /* Blue for Winter */
+    transform: rotate(270deg);
+  }
+</style>
+</head>
+<body>
+
+<div class="pie-chart">
+  <div class="slice">
+    <div class="half-circle spring">tehyt</div>
+    <div class="half-circle summer">tryet</div>
+    <div class="half-circle autumn">tyert</div>
+    <div class="half-circle winter">treyt</div>
+  </div>
+</div>
+
+</body>
+</html>
