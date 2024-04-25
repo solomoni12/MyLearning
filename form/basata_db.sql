@@ -70,3 +70,27 @@ CREATE TABLE ReportsAnalytics (
     data TEXT,
     generated_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+
+
+-- table craete
+
+php artisan make:migration create_users_table
+php artisan make:migration create_content_table
+php artisan make:migration create_review_panel_table
+php artisan make:migration create_review_panel_content_table
+php artisan make:migration create_license_table
+php artisan make:migration create_media_channels_table
+php artisan make:migration create_content_media_channels_table
+php artisan make:migration create_reports_analytics_table
+
+
+
+-- model
+php artisan make:model User
+php artisan make:model Content
+php artisan make:model ReviewPanel
+php artisan make:model License
+php artisan make:model MediaChannel
+php artisan make:model ReportAnalytics
